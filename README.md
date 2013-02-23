@@ -11,13 +11,9 @@ This theme starter makes a few assumptions based on my typical workflow; if your
 ## Features
 
 * HTML5 markup with ARIA Landmark roles
-
 * CSS reset with baseline typography and utility classes
-
 * Google CDN-hosted copy of jQuery
-
 * Ready to go with Elliot Condon's Advanced Custom Fields plugin
-
 * Localization-ready
 
 ## Usage
@@ -50,7 +46,6 @@ If you'd like your stylesheets to automatically re-compile upon save run:
 #### Resources
 
 * [An Introduction to SASS in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)
-
 * [Recompile SASS Upon Deployment Using Git Hooks](http://stevegrunwell.com/blog/recompile-sass-upon-deployment-using-git-hooks)
 
 ### Install Advanced Custom Fields
@@ -62,7 +57,6 @@ If you intend to use Advanced Custom Fields you'll want to download and activate
 If you haven't been exposed to the awesome that is ACF yet I implore you to read the following blog posts:
 
 * [Using Advanced Custom Fields for WordPress](http://stevegrunwell.com/blog/wordpress-advanced-custom-fields)
-
 * [Using WordPress Advanced Custom Fields Exports](http://stevegrunwell.com/blog/wordpress-advanced-custom-fields-export)
 
 ### Delete this file
