@@ -177,13 +177,13 @@ function themename_register_styles_scripts() {
   global $wp_styles;
 
   /** Stylesheets */
-  wp_register_style( 'styles', get_bloginfo( 'template_url' ) . '/css/generated/styles.css', null, null, 'all' );
-  wp_register_style( 'ie8', get_bloginfo( 'template_url' ) . '/css/generated/ie8.css', array( 'styles' ), null, 'all' );
+  wp_register_style( 'styles', get_stylesheet_directory_uri() . '/css/generated/styles.css', null, null, 'all' );
+  wp_register_style( 'ie8', get_stylesheet_directory_uri() . '/css/generated/ie8.css', array( 'styles' ), null, 'all' );
   $wp_styles->add_data( 'ie8', 'conditional', 'lte IE 8' );
 
   /** Scripts */
-  wp_register_script( 'scripts', get_bloginfo( 'template_url' ) . '/js/scripts.js', array( 'jquery' ), null, true );
-  wp_register_script( 'modernizr', get_bloginfo( 'template_url' ) . '/js/modernizr.min.js', null, null, false );
+  wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/js/scripts.js', array( 'jquery' ), null, true );
+  wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js', null, null, false );
 
   if ( ! is_admin() && ! is_login_page() ) {
     wp_enqueue_style( 'styles' );
