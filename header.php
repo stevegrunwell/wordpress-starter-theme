@@ -21,7 +21,7 @@
     <?php themename_site_logo(); ?>
 
     <nav id="primary-nav" role="navigation">
-      <a href="#content" class="skip-link screen-reader-text">Skip to main content</a>
+      <a href="#content" class="skip-link screen-reader-text"><?php _e( 'Skip to main content', '%Text_Domain%' ); ?></a>
       <?php
         // Primary navigation
         $args = array(
