@@ -130,28 +130,6 @@ function themename_google_analytics() {
 //add_filter( 'wp_head', 'themename_google_analytics' );
 
 /**
- * Replace the WordPress version of jQuery with a Google CDN copy
- *
- * Since WordPress won't handle '//example.com'-style links (which inherit the current protocol),
- * we need to determine whether or not the user is accessing the site over HTTPS - if they're not
- * then we don't want to download jQuery over HTTPS as it won't cache.
- *
- * @uses is_admin()
- * @uses is_ssl()
- * @uses wp_deregister_script()
- * @uses wp_enqueue_script()
- */
-function themename_load_jquery_from_cdn() {
-  $version = '1.9.2'; // The jQuery version you want to load
-  if ( ! is_admin() ) {
-    wp_deregister_script( 'jquery' );
-    $url = sprintf( '%s://ajax.googleapis.com/ajax/libs/jquery/%s/jquery.min.js', ( is_ssl() ? 'https' : 'http' ), $version );
-    wp_enqueue_script( 'jquery', $url, false, $version );
-  }
-}
-add_action( 'init', 'themename_load_jquery_from_cdn' );
-
-/**
  * Create previous/next post links
  * @return str
  * @uses get_previous_posts_link()
