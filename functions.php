@@ -182,7 +182,7 @@ function themename_site_logo() {
   if ( is_front_page() ) {
     $logo = sprintf( '<h1 id="site-logo">%s</h1>', get_bloginfo( 'name' ) );
   } else{
-    $logo = sprintf( '<a href="%s" id="site-logo">%s</h1>', site_url( '/' ), get_bloginfo( 'name' ) );
+    $logo = sprintf( '<a href="%s" id="site-logo">%s</a>', site_url( '/' ), get_bloginfo( 'name' ) );
   }
   print $logo;
 }
