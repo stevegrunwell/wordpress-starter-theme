@@ -12,15 +12,6 @@ if ( ! defined( 'USE_LOCAL_ACF_CONFIGURATION' ) || ! USE_LOCAL_ACF_CONFIGURATION
 }
 
 /**
- * Register site navigation menus
- */
-register_nav_menus(
-  array(
-    'primary-nav' => __( 'Primary Navigation', '%Text_Domain%' )
-  )
-);
-
-/**
  * Shortcut for `echo themename_get_custom_field( ... )`, accepts the same arguments
  * @param str $key The custom field key
  * @param int $id The post ID
@@ -145,6 +136,19 @@ function themename_post_nav_links() {
   }
   return ( $nav ? sprintf( '<ul class="post-nav-links">%s</ul>', $nav ) : '' );
 }
+
+/**
+ * Register site navigation menus
+ * @uses register_nav_menus()
+ */
+function themename_register_nav_menus() {
+  register_nav_menus(
+    array(
+      'primary-nav' => __( 'Primary Navigation', '%Text_Domain%' )
+    )
+  );
+}
+add_action( 'init', 'themename_register_nav_menus' );
 
 /**
  * Register and enqueue theme styles and scripts

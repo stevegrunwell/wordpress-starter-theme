@@ -26,7 +26,7 @@
         // Primary navigation
         $args = array(
           'container' => false,
-          'menu' => 'primary-nav'
+          'theme_location' => 'primary-nav'
         );
         wp_nav_menu( $args );
       ?>
