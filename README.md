@@ -63,6 +63,10 @@ If you haven't been exposed to the awesome that is ACF yet I implore you to read
 
 Once you're on your way to building the next awesome theme you probably don't need these setup instructions. You can keep the file around if you want but there's zero need or obligation for you to do so.
 
+## Site plugins
+
+If you plan to use features like custom post types, taxonomies, etc. I encourage you to check out [this starter theme's sibling project](https://github.com/stevegrunwell/wordpress-starter-plugin), a similar starter plugin. By isolating things like custom post types into a plugin you reduce the risk of data being lost when you change themes in the future. It's a good habit to get into and the starter plugin makes it a cinch to get started.
+
 ## Support this project
 
 This starter kit is free for anyone to use but it is tailored towards my ever-changing personal workflow. If there's something you don't like about it please feel free to fork the project and create your own personal starter kit. I likely will not be accepting pull requests unless a) there's a bug or b) you introduce me to a feature so totally cool that I immediately adopt it as a default in my theme development workflow.
