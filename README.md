@@ -1,18 +1,17 @@
-# Grunwell WordPress Theme Starter Kit
+# Grunwell WordPress Starter Theme
 
 This project contains the basic foundation I use when creating new WordPress themes. It's not really meant to be used by itself but rather start as a base for building new custom themes. What I've given you should be flexible, organized, and ready for whatever you want to throw at it.
 
 This theme starter makes a few assumptions based on my typical workflow; if yours is different, please feel free to modify this as you see fit. The assumptions are:
 
 1. The theme will be responsive
-2. Stylesheets will be written in SASS
+2. Stylesheets will be written in Sass (using Compass)
 3. [Elliot Condon's Advanced Custom Fields](http://advancedcustomfields.com) plugin will be used
 
 ## Features
 
 * HTML5 markup with ARIA Landmark roles
 * CSS reset with baseline typography and utility classes
-* Google CDN-hosted copy of jQuery
 * Ready to go with Elliot Condon's Advanced Custom Fields plugin
 * Localization-ready
 
@@ -33,15 +32,9 @@ There are a number of variables throughout the theme files that are meant to be 
 
 ### Generate stylesheets
 
-By default there's nothing but a .gitkeep (placeholder) directory in css/generated. This theme started is setup to use [SASS](http://sass-lang.com/) where the site serves compiled stylesheets from css/generated.
+The theme styles are written using [Compass](http://compass-style.org), a [Sass CSS pre-processor](http://sass-lang.com/) framework. The idea behind this is to have reusable, well-organized stylesheets in css/sass but our theme serves concatenated and compressed styles from css/generated.
 
-To generate your first stylesheet install SASS on your system and run:
-
-    sass sass:generated --style compressed
-
-If you'd like your stylesheets to automatically re-compile upon save run:
-
-    sass --watch sass:generated --style compressed
+Your Compass configuration is in config.rb. Make any adjustments you need to there, then run `compass watch` in a terminal session to compile the stylesheets.
 
 #### Resources
 
