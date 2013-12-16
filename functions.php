@@ -26,28 +26,6 @@ function themename_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'themename_excerpt_more' );
 
 /**
- * Add Google Analytics tracking to the site
- * Depends on a 'google_analytics_id' field being created on a theme options page
- * @uses themename_get_custom_field()
- */
-function themename_google_analytics() {
-  if ( $id = themename_get_custom_field( 'google_analytics_id', 'options', false ) ) {
-    printf( "\n<!-- Google Analytics -->\n"
-    . "<script type=\"text/javascript\">\n"
-    . "  var _gaq = _gaq || [];\n"
-    . "  _gaq.push(['_setAccount', '%s']);\n"
-    . "  _gaq.push(['_trackPageview']);\n"
-    . "  (function() {\n"
-    . "    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n"
-    . "    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n"
-    . "    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);\n"
-    . "  })();\n"
-    . "</script>\n", $id );
-  }
-}
-//add_filter( 'wp_head', 'themename_google_analytics' );
-
-/**
  * Create previous/next post links
  * @return str
  * @uses get_previous_posts_link()
