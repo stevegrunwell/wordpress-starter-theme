@@ -30,13 +30,17 @@ There are a number of variables throughout the theme files that are meant to be 
 * **%Theme_Name%** - The name of the theme
 * **themename_** - Prefix on all theme-specific functions
 
-### Generate stylesheets
+### Grunt.js
+
+The theme is configured to use [Grunt.js](http://gruntjs.com/) to handle build tasks like compiling stylesheets, concatenating and minifying JavaScript, and running scripts through JSHint. Once everything's configured to your liking run `npm install` to download the node packages into the theme; once those packages are installed running the build process is as simple as `grunt` (or `grunt watch` if you don't want to run it each time).
+
+#### Stylesheets
 
 The theme styles are written using [Compass](http://compass-style.org), a [Sass CSS pre-processor](http://sass-lang.com/) framework. The idea behind this is to have reusable, well-organized stylesheets in css/sass but our theme serves concatenated and compressed styles from css/generated.
 
-Your Compass configuration is in config.rb. Make any adjustments you need to there, then run `compass watch` in a terminal session to compile the stylesheets.
+Your Compass configuration is in config.rb.
 
-#### Resources
+##### Resources
 
 * [An Introduction to SASS in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)
 * [Recompile SASS Upon Deployment Using Git Hooks](http://stevegrunwell.com/blog/recompile-sass-upon-deployment-using-git-hooks)
