@@ -8,6 +8,5 @@
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-compass": "~0.6.0",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-smushit": "~1.1.2"
   }
 }

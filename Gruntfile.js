@@ -38,12 +38,6 @@ module.exports = function(grunt) {
       }
     },
 
-    smushit: {
-      images: {
-        src: ['public/img/*.{png,jpg,jpeg}']
-      }
-    },
-
     watch: {
       options: {
         livereload: true
@@ -65,10 +59,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-smushit');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'compass', 'smushit']);
+  grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'compass']);
 
 };
