@@ -1,7 +1,3 @@
-var scripts = [
-  'js/theme.js'
-];
-
 module.exports = function(grunt) {
 
   // Project configuration.
@@ -12,12 +8,12 @@ module.exports = function(grunt) {
       options: {
         force: true
       },
-      all: scripts
+      all: ['js/src/theme.js']
     },
 
     concat: {
       dist: {
-        src: scripts,
+        src: ['js/src/theme.js'],
         dest: 'js/scripts.js'
       }
     },
@@ -43,7 +39,7 @@ module.exports = function(grunt) {
         livereload: true
       },
       scripts: {
-        files: scripts,
+        files: ['js/src/*.js'],
         tasks: ['jshint', 'concat', 'uglify']
       },
       styles: {
