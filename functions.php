@@ -9,6 +9,10 @@ require_once dirname( __FILE__ ) . '/functions/admin.php';
 require_once dirname( __FILE__ ) . '/functions/advanced-custom-fields.php';
 require_once dirname( __FILE__ ) . '/functions/utility.php';
 
+/** Enable additional theme features */
+add_post_type_support( 'page', 'excerpt' );
+add_theme_support( 'post-thumbnails' );
+
 /**
  * Custom "Read More" links
  * @global $post
@@ -41,6 +45,14 @@ function themename_post_nav_links() {
   }
   return ( $nav ? sprintf( '<ul class="post-nav-links">%s</ul>', $nav ) : '' );
 }
+
+/**
+ * Register the site favicon, if it exists
+ */
+function themename_register_favicon() {
+  printf( '<link href="%s/favicon.ico" rel="shortcut icon" />' . PHP_EOL, get_template_directory_uri() );
+}
+//add_action( 'wp_head', 'themename_register_favicon' );
 
 /**
  * Register site navigation menus
