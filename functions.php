@@ -15,9 +15,14 @@ add_theme_support( 'post-thumbnails' );
 
 /**
  * Custom "Read More" links
+ *
  * @global $post
  * @param str $more won't be used
  * @return str
+ *
+ * @uses esc_attr()
+ * @uses get_permalink()
+ * @uses get_the_title()
  */
 function themename_excerpt_more( $more ) {
   global $post;
@@ -31,7 +36,9 @@ add_filter( 'excerpt_more', 'themename_excerpt_more' );
 
 /**
  * Create previous/next post links
+ *
  * @return str
+ *
  * @uses get_previous_posts_link()
  * @uses get_next_posts_link()
  */
@@ -48,6 +55,8 @@ function themename_post_nav_links() {
 
 /**
  * Register the site favicon, if it exists
+ *
+ * @uses get_template_directory_uri()
  */
 function themename_register_favicon() {
   printf( '<link href="%s/favicon.ico" rel="shortcut icon" />' . PHP_EOL, get_template_directory_uri() );
@@ -56,6 +65,7 @@ function themename_register_favicon() {
 
 /**
  * Register site navigation menus
+ *
  * @uses register_nav_menus()
  */
 function themename_register_nav_menus() {
@@ -69,8 +79,15 @@ add_action( 'init', 'themename_register_nav_menus' );
 
 /**
  * Register and enqueue theme styles and scripts
+ *
  * @global $wp_styles
  * @return void
+ *
+ * @uses get_stylesheet_directory_uri()
+ * @uses wp_enqueue_script()
+ * @uses wp_enqueue_style()
+ * @uses wp_register_script()
+ * @uses wp_register_style()
  */
 function themename_register_styles_scripts() {
   global $wp_styles;
@@ -97,7 +114,12 @@ add_action( 'wp_enqueue_scripts', 'themename_register_styles_scripts' );
 /**
  * Generates and outputs the theme's #site-logo
  * The front page will be a <h1> tag while interior pages will be links to the homepage
+ *
  * @return void
+ *
+ * @uses get_bloginfo()
+ * @uses is_front_page()
+ * @uses site_url()
  */
 function themename_site_logo() {
   if ( is_front_page() ) {
@@ -111,12 +133,15 @@ function themename_site_logo() {
 /**
  * Create a nicely formatted <title> element for the page
  * Based on twentytwelve_wp_title()
+ *
  * @global $page
  * @global $paged
  * @param str $title The default title text
  * @param str $sep Optional separator
  * @return str
+ *
  * @uses get_bloginfo()
+ * @uses is_feed()
  * @uses is_front_page()
  * @uses is_home()
  */
