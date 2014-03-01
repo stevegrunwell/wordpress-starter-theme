@@ -1,5 +1,6 @@
 /**
  * Primary theme stylesheet
+ *
  * @package %Theme_Name%
  * @author %Author%
  */
@@ -8,6 +9,7 @@
 
 @import 'compass';
 @import 'global';
+@import 'reset';
 @import 'base';
 
 @media print {
