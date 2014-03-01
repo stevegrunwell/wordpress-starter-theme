@@ -1,6 +1,7 @@
 <?php
 /**
  * Functions meant to extend core WordPress functionality
+ *
  * @package %Theme_Name%
  * @author %Author%
  */

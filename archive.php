@@ -1,6 +1,7 @@
 <?php
 /**
  * Post archive template
+ *
  * @package %Theme_Name%
  * @author %Author%
  */

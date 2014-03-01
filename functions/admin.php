@@ -1,6 +1,7 @@
 <?php
 /**
  * Customizations to the WordPress administration area
+ *
  * @package %Theme_Name%
  * @author %Author%
  */

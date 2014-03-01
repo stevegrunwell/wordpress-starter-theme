@@ -1,6 +1,7 @@
 <?php
 /**
  * Default implementation of the WordPress loop
+ *
  * @package %Theme_Name%
  * @author %Author%
  */

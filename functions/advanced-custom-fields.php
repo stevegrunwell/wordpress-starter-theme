@@ -1,6 +1,7 @@
 <?php
 /**
  * Functionality related to Advanced Custom Fields
+ *
  * @package %Theme_Name%
  * @author %Author%
  */

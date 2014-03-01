@@ -1,5 +1,6 @@
 /**
  * Theme scripting
+ *
  * @package %Theme_Name%
  * @author %Author%
  */

@@ -1,6 +1,7 @@
 <?php
 /**
  * Default template
+ *
  * @package %Theme_Name%
  * @author %Author%
  */
