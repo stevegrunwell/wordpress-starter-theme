@@ -30,6 +30,8 @@ There are a number of variables throughout the theme files that are meant to be 
 * **%Theme_Name%** - The name of the theme
 * **themename_** - Prefix on all theme-specific functions
 
+You may also want to include a theme screenshot.png, which should be 600x450px.
+
 ### Grunt.js
 
 The theme is configured to use [Grunt.js](http://gruntjs.com/) to handle build tasks like compiling stylesheets, concatenating and minifying JavaScript, and running scripts through JSHint. Once everything's configured to your liking run `npm install` to download the node packages into the theme; once those packages are installed running the build process is as simple as `grunt` (or `grunt watch` if you don't want to run it each time).
