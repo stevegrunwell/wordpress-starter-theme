@@ -8,14 +8,18 @@
 
 get_header(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+<div id="content">
 
-  <?php get_template_part( 'content', 'index' ); ?>
+  <?php while ( have_posts() ) : the_post(); ?>
 
-<?php endwhile; ?>
+    <?php get_template_part( 'content', 'index' ); ?>
 
-<?php echo themename_post_nav_links(); ?>
+  <?php endwhile; ?>
 
-<?php get_sidebar( 'index' ); ?>
+  <?php echo themename_post_nav_links(); ?>
+
+  <?php get_sidebar( 'index' ); ?>
+
+</div><!-- #content -->
 
 <?php get_footer(); ?>
