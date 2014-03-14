@@ -55,6 +55,25 @@ function themename_post_nav_links() {
 }
 
 /**
+ * Register dynamic sidebars
+ *
+ * @uses register_sidebar()
+ */
+function themename_register_dynamic_sidebars() {
+  $sidebars = array(
+    array(
+      'id' => 'primary-sidebar',
+      'name' => __( 'Primary sidebar', '%Text_Domain%' ),
+    )
+  );
+
+  foreach ( $sidebars as $sidebar ) {
+    register_sidebar( $sidebar );
+  }
+}
+//add_action( 'widgets_init', 'themename_register_dynamic_sidebars' );
+
+/**
  * Register the site favicon, if it exists
  *
  * @uses get_template_directory_uri()
