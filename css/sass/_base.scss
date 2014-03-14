@@ -46,9 +46,8 @@ img {
 
 /** Utility classes */
 .screen-reader-text {
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
+  position: absolute;
+  left: -99999em;
 }
 .clearfix {
   zoom: 1;
