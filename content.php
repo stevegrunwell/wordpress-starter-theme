@@ -16,7 +16,7 @@ if ( is_singular() ) : ?>
 <?php else : ?>
 
   <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="permalink"><?php the_title(); ?></a></h2>
+    <h2 class="post-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
     <?php the_excerpt(); ?>
   </article><!-- #post-<?php the_ID(); ?> -->
 

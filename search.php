@@ -10,7 +10,7 @@ get_header(); ?>
 
 <div id="content">
 
-  <h1 class="archive-title"><?php printf( __( 'Search results for "%s"', '%Text_Domain%' ), get_search_query() ); ?></h1>
+  <h1 class="post-title"><?php printf( __( 'Search results for "%s"', '%Text_Domain%' ), get_search_query() ); ?></h1>
 
   <?php if ( have_posts() ) : ?>
 

@@ -10,7 +10,7 @@ get_header(); ?>
 
 <div id="content">
 
-  <h1 class="archive-title"><?php
+  <h1 class="post-title"><?php
     if ( is_day() ) {
       printf( __( 'Daily Archives: %s', '%Text_Domain%' ), get_the_date() );
     } elseif ( is_month() ) {
