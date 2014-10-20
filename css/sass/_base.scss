@@ -67,3 +67,21 @@ img {
 .clear, .clearfix:after {
   clear: both;
 }
+
+/** Structure */
+.container {
+  @include box-sizing(content-box);
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+/** Header and footer */
+header, footer {
+  @extend .container;
+}
+
+/** Content styles */
+#content {
+  @extend .container;
+}
