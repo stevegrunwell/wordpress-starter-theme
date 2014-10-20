@@ -122,6 +122,9 @@ function themename_register_styles_scripts() {
     //wp_enqueue_script( 'modernizr' );
     wp_enqueue_script( 'scripts' );
   }
+
+  // Editor stylesheets
+  add_editor_style( 'css/generated/editor.css' );
 }
 add_action( 'init', 'themename_register_styles_scripts' );
 
