@@ -42,6 +42,45 @@ The theme styles are written using [Compass](http://compass-style.org), a [Sass 
 
 Your Compass configuration is in config.rb.
 
+#### JavaScript
+
+The general idea is that scripts in js/ are those ready to be served (post-concatenation and minification), while js/src/ contains the files that get minified, while js/src/lib/ contains third-party scripts that you might include in your bundled files.
+
+For example, let's say we're using [WooTheme's Flexslider](http://www.woothemes.com/flexslider/) for a hero carousel that only appears on the homepage. Rather than load this content on _every_ page, we'll load a file on the homepage template that contains the Flexslider plugin along with our custom scripting for Flexslider.
+
+Our directory structure might look something like this:
+
+```
+js/hero-carousel.js (the file we'll serve to browsers)
+js/src/hero-carousel-scripting.js (our custom scripting for the carousel)
+js/src/lib/jquery.flexslider.js (the Flexslider plugin)
+```
+
+Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` configurations:
+
+```diff
+  concat: {
+    dist: {
+      src: ['js/src/theme.js'],
+      dest: 'js/scripts.js'
++   },
++   heroCarousel: {
++     src: ['js/src/lib/jquery.flexslider.js', js/src/hero-carousel-scripting.js'],
++     dest: 'js/hero-carousel.js'
+    }
+  },
+
+  uglify: {
+    min: {
+      files: {
+-       'js/scripts.js': ['js/scripts.js']
++       'js/scripts.js': ['js/scripts.js'],
++       'js/hero-carousel.js': ['js/hero-carousel.js']
+      }
+    }
+  },
+```
+
 ##### Resources
 
 * [An Introduction to SASS in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)

@@ -8,7 +8,7 @@ module.exports = function(grunt) {
       options: {
         force: true
       },
-      all: ['js/src/theme.js']
+      all: ['js/src/*.js']
     },
 
     concat: {
