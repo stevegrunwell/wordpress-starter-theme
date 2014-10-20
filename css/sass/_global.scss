@@ -10,13 +10,17 @@
 /* Global */
 $rem-base: 16px !default;
 
+// Timing
+$transition-speed: .4s;
+$link-transition-speed: .15s;
+
  /* Typography */
 $body-font-family: sans-serif;
 $body-text-color: #333;
 $body-line-height: 1.8em;
 
 $link-color: rgb(0,0,238);
-$link-hover-color: $link-color;
+$link-hover-color: darken($link-color, 10%);
 
 $heading-font-family: $body-font-family;
 $heading-color: $body-text-color;

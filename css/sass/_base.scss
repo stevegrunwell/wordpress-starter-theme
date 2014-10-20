@@ -11,20 +11,25 @@ body {
   line-height: $body-line-height;
   color: $body-text-color;
 }
+
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1em;
   font-family: $heading-font-family;
   color: $heading-color;
 }
+
 ol, ul, dl, p, blockquote, img {
   margin-bottom: $body-line-height;
 }
+
 ol, ul {
   margin-left: 1.4em;
 }
+
 a {
   text-decoration: none;
   color: $link-color;
+  @include transition(all, $link-transition-speed);
   &:hover, &:focus, &:active {
     text-decoration: underline;
     color: $link-hover-color;
@@ -39,6 +44,7 @@ img {
   height: auto;
   -ms-interpolation-mode: bicubic;
 }
+
 .alignleft, .alignright, .aligncenter, .alignnone {
   margin-left: auto;
   margin-right: auto;
@@ -49,6 +55,7 @@ img {
   position: absolute;
   left: -99999em;
 }
+
 .clearfix {
   zoom: 1;
   &:before, &:after {
@@ -56,6 +63,7 @@ img {
     display: table;
   }
 }
+
 .clear, .clearfix:after {
   clear: both;
 }
