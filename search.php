@@ -22,7 +22,7 @@ get_header(); ?>
 
     <?php endwhile; ?>
 
-    <?php echo themename_post_nav_links(); ?>
+    <?php echo themename_get_pagination(); ?>
 
   <?php else : ?>
 
