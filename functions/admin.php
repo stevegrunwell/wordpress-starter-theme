@@ -7,6 +7,18 @@
  */
 
 /**
+ * Add the style select menu to the TinyMCE editor
+ *
+ * @param array $buttons Buttons for this row of the TinyMCE toolbar
+ * @return array
+ */
+function themename_add_style_select_to_tinymce( $buttons = array() ) {
+  array_unshift( $buttons, 'styleselect' );
+  return $buttons;
+}
+add_filter( 'mce_buttons_2', 'themename_add_style_select_to_tinymce' );
+
+/**
  * Hide admin menus we don't need
  *
  * @global $menu
@@ -32,6 +44,7 @@ function themename_remove_admin_menus() {
  * @param array $init Default settings to be overridden
  * @return array The modified $init
  *
+ * @link http://codex.wordpress.org/TinyMCE_Custom_Styles
  * @link http://wpengineer.com/1963/customize-wordpress-wysiwyg-editor/
  * @link http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference
  */
@@ -48,6 +61,16 @@ function themename_change_mce_buttons( $init ) {
   );
   $init['block_formats'] = implode( ';', $block_formats );
   $init['theme_advanced_disable'] = 'forecolor';
+
+  $style_formats = array(
+    array(
+      'title' => __( 'Blockquote citation', '%Text_Domain%' ),
+      'selector' => 'blockquote p',
+      'classes' => 'cite',
+      'wrapper' => false
+    )
+  );
+  $init['style_formats'] = json_encode( $style_formats );
 
   return $init;
 }
