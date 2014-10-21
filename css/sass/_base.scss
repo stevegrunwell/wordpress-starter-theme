@@ -76,6 +76,10 @@ img {
   padding: 0 $container-padding;
 }
 
+.primary, .secondary, .col {
+  margin-bottom: $body-line-height;
+}
+
 /** Header and footer */
 header, footer {
   @extend .container;
@@ -85,3 +89,5 @@ header, footer {
 #content {
   @extend .container;
 }
+
+/** Media queries */
