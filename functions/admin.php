@@ -19,26 +19,6 @@ function themename_add_style_select_to_tinymce( $buttons = array() ) {
 add_filter( 'mce_buttons_2', 'themename_add_style_select_to_tinymce' );
 
 /**
- * Hide admin menus we don't need
- *
- * @global $menu
- * @return void
- */
-function themename_remove_admin_menus() {
-  global $menu;
-  $restricted = array( __( 'Posts' ), __( 'Comments' ) );
-  end( $menu );
-  while ( prev( $menu ) ) {
-    $value = explode( ' ', $menu[ key( $menu ) ][0] );
-    if ( in_array( $value['0'] != null ? $value[0] : '', $restricted ) ) {
-      unset( $menu[ key( $menu ) ] );
-    }
-  }
-  return;
-}
-//add_action( 'admin_menu', 'themename_remove_admin_menus' );
-
-/**
  * Customize the TinyMCE WYSIWYG editor
  *
  * @param array $init Default settings to be overridden
@@ -60,7 +40,6 @@ function themename_change_mce_buttons( $init ) {
     'Heading 6=h6'
   );
   $init['block_formats'] = implode( ';', $block_formats );
-  $init['theme_advanced_disable'] = 'forecolor';
 
   $style_formats = array(
     array(
@@ -75,3 +54,37 @@ function themename_change_mce_buttons( $init ) {
   return $init;
 }
 add_filter( 'tiny_mce_before_init', 'themename_change_mce_buttons' );
+
+/**
+ * Hide admin menus we don't need
+ *
+ * @global $menu
+ * @return void
+ */
+function themename_remove_admin_menus() {
+  global $menu;
+  $restricted = array( __( 'Posts' ), __( 'Comments' ) );
+  end( $menu );
+  while ( prev( $menu ) ) {
+    $value = explode( ' ', $menu[ key( $menu ) ][0] );
+    if ( in_array( $value['0'] != null ? $value[0] : '', $restricted ) ) {
+      unset( $menu[ key( $menu ) ] );
+    }
+  }
+  return;
+}
+//add_action( 'admin_menu', 'themename_remove_admin_menus' );
+
+/**
+ * Remove the "Text Color" TinyMCE button
+ *
+ * @param array $buttons Buttons for this row of the TinyMCE toolbar
+ * @return array
+ */
+function themename_remove_forecolor_button( $buttons = array() ) {
+  if ( $key = array_search( 'forecolor', $buttons ) ) {
+    unset( $buttons[ $key ] );
+  }
+  return $buttons;
+}
+add_filter( 'mce_buttons_2', 'themename_remove_forecolor_button' );
