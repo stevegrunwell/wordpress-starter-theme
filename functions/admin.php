@@ -33,11 +33,22 @@ function themename_remove_admin_menus() {
  * @return array The modified $init
  *
  * @link http://wpengineer.com/1963/customize-wordpress-wysiwyg-editor/
+ * @link http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference
  */
 function themename_change_mce_buttons( $init ) {
-  // @see http://wiki.moxiecode.com/index.php/TinyMCE:Control_reference
-  $init['theme_advanced_blockformats'] = 'p,h2,h3,h4,h5,h6,pre'; // no more h1
+  $block_formats = array(
+    'Paragraph=p',
+    'Address=address',
+    'Pre=pre',
+    'Heading 2=h2',
+    'Heading 3=h3',
+    'Heading 4=h4',
+    'Heading 5=h5',
+    'Heading 6=h6'
+  );
+  $init['block_formats'] = implode( ';', $block_formats );
   $init['theme_advanced_disable'] = 'forecolor';
+
   return $init;
 }
 add_filter( 'tiny_mce_before_init', 'themename_change_mce_buttons' );
