@@ -84,7 +84,7 @@ Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` c
 ##### Resources
 
 * [An Introduction to SASS in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)
-* [Recompile SASS Upon Deployment Using Git Hooks](http://stevegrunwell.com/blog/recompile-sass-upon-deployment-using-git-hooks)
+* [Recompile SASS Upon Deployment Using Git Hooks](https://stevegrunwell.com/blog/automatically-recompile-sass-upon-deployment-using-git-hooks/)
 
 ### Install Advanced Custom Fields
 
