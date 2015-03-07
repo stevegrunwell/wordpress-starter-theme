@@ -29,6 +29,7 @@ There are a number of variables throughout the theme files that are meant to be 
 * **%Text_Domain%** - The theme's text domain (used for i18n)
 * **%Theme_Name%** - The name of the theme
 * **themename_** - Prefix on all theme-specific functions
+* **wordpress-starter-theme** - Name of the theme directory (i.e. /wp-content/themes/wordpress-starter-theme)
 
 You may also want to include a theme screenshot.png, which should be 600x450px.
 
