@@ -29,6 +29,7 @@ There are a number of variables throughout the theme files that are meant to be 
 * **%Text_Domain%** - The theme's text domain (used for i18n)
 * **%Theme_Name%** - The name of the theme
 * **themename_** - Prefix on all theme-specific functions
+* **wordpress-starter-theme** - Name of the theme directory (i.e. /wp-content/themes/wordpress-starter-theme)
 
 You may also want to include a theme screenshot.png, which should be 600x450px.
 
@@ -84,7 +85,7 @@ Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` c
 ##### Resources
 
 * [An Introduction to SASS in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)
-* [Recompile SASS Upon Deployment Using Git Hooks](http://stevegrunwell.com/blog/recompile-sass-upon-deployment-using-git-hooks)
+* [Recompile SASS Upon Deployment Using Git Hooks](https://stevegrunwell.com/blog/automatically-recompile-sass-upon-deployment-using-git-hooks/)
 
 ### Install Advanced Custom Fields
 

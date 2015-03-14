@@ -1,7 +1,7 @@
 # Require any additional compass plugins here.
 
 # Set this to the root of your project when deployed:
-http_path = '/wp-content/themes/starter-theme/'
+http_path = '/wp-content/themes/wordpress-starter-theme/'
 css_dir = 'css/generated'
 sass_dir = 'css/sass'
 images_dir = 'img'
