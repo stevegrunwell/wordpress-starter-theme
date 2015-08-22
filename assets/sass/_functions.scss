@@ -6,14 +6,14 @@
  */
 
 /**
- * Strip the unit from a measurement
+ * Strip the unit from a measurement.
  */
 @function strip-unit($num) {
 	@return $num / ($num * 0 + 1);
 }
 
 /**
- * Convert a single value to rems
+ * Convert a single value to rems.
  */
 @function convert-to-rem($value, $base-value: $rem-base)  {
 	$value: strip-unit($value) / strip-unit($base-value) * 1rem;
@@ -22,7 +22,7 @@
 }
 
 /**
- * Calculate the rem-value equivalent for a value
+ * Calculate the rem-value equivalent for a value.
  */
 @function rem-calc($values, $base-value: $rem-base) {
 	$max: length($values);
@@ -37,7 +37,7 @@
 }
 
 /**
- * Style input placeholders
+ * Style input placeholders.
  *
  * @link https://github.com/michaelsacca/Compass-Placeholder-Text-Mixin
  */

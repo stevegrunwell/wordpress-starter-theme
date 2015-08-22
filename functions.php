@@ -14,44 +14,41 @@ add_post_type_support( 'page', 'excerpt' );
 add_theme_support( 'post-thumbnails' );
 
 /**
- * Custom "Read More" links
+ * Custom "Read More" links.
  *
  * @global $post
- * @param str $more won't be used
- * @return str
  *
- * @uses esc_attr()
- * @uses get_permalink()
- * @uses get_the_title()
+ * @param string $more Won't be used.
+ * @return string A "continue reading" link to the post.
  */
 function themename_excerpt_more( $more ) {
 	global $post;
-	return sprintf( '<a href="%s" title="%s" class="read-more">%s</a>',
-		get_permalink( $post->ID ),
+
+	return sprintf(
+		'<a href="%s" title="%s" class="read-more">%s</a>',
+		esc_url( get_permalink( $post->ID ) ),
 		esc_attr( sprintf( __( 'Continue reading "%s"', '%Text_Domain%' ), get_the_title( $post->ID ) ) ),
-		__( 'Continue reading&hellip;', '%Text_Domain%' )
+		esc_html__( 'Continue reading&hellip;', '%Text_Domain%' )
 	);
 }
 add_filter( 'excerpt_more', 'themename_excerpt_more' );
 
 /**
- * Register dynamic sidebars
- *
- * @uses register_sidebar()
+ * Register dynamic sidebars.
  */
 function themename_register_dynamic_sidebars() {
 	$sidebars = array(
 		array(
-			'id' => 'primary-sidebar',
+			'id'   => 'primary-sidebar',
 			'name' => __( 'Primary sidebar', '%Text_Domain%' ),
-		)
+		),
 	);
 
 	foreach ( $sidebars as $sidebar ) {
 		register_sidebar( $sidebar );
 	}
 }
-//add_action( 'widgets_init', 'themename_register_dynamic_sidebars' );
+add_action( 'widgets_init', 'themename_register_dynamic_sidebars' );
 
 /**
  * Register site navigation menus
@@ -61,8 +58,8 @@ function themename_register_dynamic_sidebars() {
 function themename_register_nav_menus() {
 	register_nav_menus(
 		array(
-			'primary-nav' => __( 'Primary Navigation', '%Text_Domain%' )
-		)
+			'primary-nav' => __( 'Primary Navigation', '%Text_Domain%' ),
+		),
 	);
 }
 add_action( 'init', 'themename_register_nav_menus' );
@@ -93,62 +90,26 @@ function themename_register_styles_scripts() {
 		wp_enqueue_script( 'scripts' );
 	}
 
-	// Editor stylesheets
+	// Editor stylesheets.
 	add_editor_style( 'assets/css/editor.css' );
 }
 add_action( 'init', 'themename_register_styles_scripts' );
 
 
 /**
- * Generates and outputs the theme's #site-logo
- * The front page will be a <h1> tag while interior pages will be links to the homepage
+ * Generates and outputs the theme's #site-logo.
  *
- * @return void
- *
- * @uses get_bloginfo()
- * @uses is_front_page()
- * @uses site_url()
+ * The front page will be a <h1> tag while interior pages will be links to the homepage.
  */
 function themename_site_logo() {
 	if ( is_front_page() ) {
-		$logo = sprintf( '<h1 id="site-logo">%s</h1>', get_bloginfo( 'name' ) );
-	} else{
-		$logo = sprintf( '<a href="%s" id="site-logo">%s</a>', site_url( '/' ), get_bloginfo( 'name' ) );
+		printf( '<h1 id="site-logo">%s</h1>', esc_html( get_bloginfo( 'name' ) ) );
+
+	} else {
+		printf(
+			'<a href="%s" id="site-logo">%s</a>',
+			esc_attr( site_url( '/' ) ),
+			esc_html( get_bloginfo( 'name' ) )
+		);
 	}
-	print $logo;
 }
-
-/**
- * Create a nicely formatted <title> element for the page
- * Based on twentytwelve_wp_title()
- *
- * @global $page
- * @global $paged
- * @param str $title The default title text
- * @param str $sep Optional separator
- * @return str
- *
- * @uses get_bloginfo()
- * @uses is_feed()
- * @uses is_front_page()
- * @uses is_home()
- */
-function themename_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( ! is_feed() ) {
-		$title .= get_bloginfo( 'name' );
-
-		// Add the site description on blog/front page
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title = sprintf( '%s %s %s', $title, $sep, $site_description );
-		}
-
-		if ( $paged >= 2 || $page >= 2 ) {
-			$title = sprintf( '%s %s %s', $title, $sep, sprintf( __( 'Page %s', '%Text_Domain%' ), max( $paged, $page ) ) );
-		}
-	}
-	return $title;
-}
-add_filter( 'wp_title', 'themename_wp_title', 10, 2 );
