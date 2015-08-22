@@ -1,5 +1,5 @@
 /**
- * Base styles applied regardless of the screen size
+ * Base styles applied regardless of the screen size.
  *
  * @package %Theme_Name%
  * @author %Author%
@@ -7,87 +7,87 @@
 
 /** Base typography */
 body {
-  font-family: $body-font-family;
-  line-height: $body-line-height;
-  color: $body-text-color;
+	font-family: $body-font-family;
+	line-height: $body-line-height;
+	color: $body-text-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: 1em;
-  font-family: $heading-font-family;
-  color: $heading-color;
+	margin-bottom: 1em;
+	font-family: $heading-font-family;
+	color: $heading-color;
 }
 
 ol, ul, dl, p, blockquote, img {
-  margin-bottom: $body-line-height;
+	margin-bottom: $body-line-height;
 }
 
 ol, ul {
-  margin-left: 1.4em;
+	margin-left: 1.4em;
 }
 
 a {
-  text-decoration: none;
-  color: $link-color;
-  @include transition(all, $link-transition-speed);
-  &:hover, &:focus, &:active {
-    text-decoration: underline;
-    color: $link-hover-color;
-  }
+	text-decoration: none;
+	color: $link-color;
+	@include transition(all, $link-transition-speed);
+	&:hover, &:focus, &:active {
+		text-decoration: underline;
+		color: $link-hover-color;
+	}
 }
 
 /** Images */
 img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  -ms-interpolation-mode: bicubic;
+	display: block;
+	width: auto;
+	max-width: 100%;
+	height: auto;
+	-ms-interpolation-mode: bicubic;
 }
 
 .alignleft, .alignright, .aligncenter, .alignnone {
-  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /** Utility classes */
 .screen-reader-text {
-  position: absolute;
-  left: -99999em;
+	position: absolute;
+	left: -99999em;
 }
 
 .clearfix {
-  zoom: 1;
-  &:before, &:after {
-    content: '';
-    display: table;
-  }
+	zoom: 1;
+	&:before, &:after {
+		content: '';
+		display: table;
+	}
 }
 
 .clear, .clearfix:after {
-  clear: both;
+	clear: both;
 }
 
 /** Structure */
 .container {
-  @include box-sizing(content-box);
-  max-width: $container-max-width;
-  margin: 0 auto;
-  padding: 0 $container-padding;
+	@include box-sizing(content-box);
+	max-width: $container-max-width;
+	margin: 0 auto;
+	padding: 0 $container-padding;
 }
 
 .primary, .secondary, .col {
-  margin-bottom: $body-line-height;
+	margin-bottom: $body-line-height;
 }
 
 /** Header and footer */
 header, footer {
-  @extend .container;
+	@extend .container;
 }
 
 /** Content styles */
 #content {
-  @extend .container;
+	@extend .container;
 }
 
 /** Media queries */

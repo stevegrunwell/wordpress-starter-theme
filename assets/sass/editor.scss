@@ -12,26 +12,26 @@
 @import 'fonts';
 
 body#tinymce.wp-editor {
-  font-family: $body-font-family;
-  color: $body-text-color;
+	font-family: $body-font-family;
+	color: $body-text-color;
 
-  h1, h2, h3, h4, h5, h6 {
-    clear: both;
-    font-family: $heading-font-family;
-    line-height: $body-line-height;
-  }
+	h1, h2, h3, h4, h5, h6 {
+		clear: both;
+		font-family: $heading-font-family;
+		line-height: $body-line-height;
+	}
 
-  a {
-    text-decoration: none;
-    color: $link-color;
-  }
+	a {
+		text-decoration: none;
+		color: $link-color;
+	}
 
-  .alignleft {
-    margin-right: 1em;
-  }
+	.alignleft {
+		margin-right: 1em;
+	}
 
-  .alignright {
-    margin-left: 1em;
-  }
+	.alignright {
+		margin-left: 1em;
+	}
 
 }

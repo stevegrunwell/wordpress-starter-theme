@@ -59,26 +59,26 @@ assets/js/src/lib/jquery.flexslider.js (the Flexslider plugin)
 Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` configurations:
 
 ```diff
-  concat: {
-    dist: {
-      src: ['assets/js/src/theme.js'],
-      dest: 'assets/js/scripts.js'
+	concat: {
+		dist: {
+			src: ['assets/js/src/theme.js'],
+			dest: 'assets/js/scripts.js'
 +   },
 +   heroCarousel: {
 +     src: ['assets/js/src/lib/jquery.flexslider.js', js/src/hero-carousel-scripting.js'],
 +     dest: 'assets/js/hero-carousel.js'
-    }
-  },
+		}
+	},
 
-  uglify: {
-    min: {
-      files: {
+	uglify: {
+		min: {
+			files: {
 -       'assets/js/scripts.js': ['assets/js/scripts.js']
 +       'assets/js/scripts.js': ['assets/js/scripts.js'],
 +       'assets/js/hero-carousel.js': ['assets/js/hero-carousel.js']
-      }
-    }
-  },
+			}
+		}
+	},
 ```
 
 ##### Resources

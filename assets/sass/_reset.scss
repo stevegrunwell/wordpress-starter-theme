@@ -1,5 +1,5 @@
 /**
- * CSS reset, based loosely on Eric Meyer's work
+ * CSS reset, based loosely on Eric Meyer's work.
  *
  * @package %Theme_Name%
  * @author %Author%
@@ -7,57 +7,57 @@
 
 /** CSS reset */
 * {
-  @include box-sizing(border-box);
+	@include box-sizing(border-box);
 }
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
 acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong,
 sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
 tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline;
-  background: transparent;
-  border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+	background: transparent;
+	border: 0;
 }
 
 html, body {
-  font-size: $rem-base;
-  line-height: 1;
+	font-size: $rem-base;
+	line-height: 1;
 }
 
 header, nav, footer, article, section {
-  display: block;
-  margin: 0;
-  padding: 0;
+	display: block;
+	margin: 0;
+	padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  clear: both;
-  font-weight: bold;
+	clear: both;
+	font-weight: bold;
 }
 
 ul {
-  list-style-type: disc;
+	list-style-type: disc;
 }
 
 blockquote {
-  quotes: none;
-  &:before, &:after {
-    content: '';
-    content: none;
-  }
+	quotes: none;
+	&:before, &:after {
+		content: '';
+		content: none;
+	}
 }
 
 del {
-  text-decoration: line-through;
+	text-decoration: line-through;
 }
 
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 
 a img {
-  border: none;
+	border: none;
 }

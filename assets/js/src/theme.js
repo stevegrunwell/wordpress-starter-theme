@@ -9,6 +9,6 @@
 /*jshint browser: true, jquery: true */
 
 jQuery( function ( $ ) {
-  "use strict";
+	"use strict";
 
 });
