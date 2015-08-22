@@ -6,13 +6,11 @@ This theme starter makes a few assumptions based on my typical workflow; if your
 
 1. The theme will be responsive
 2. Stylesheets will be written in Sass (using Compass)
-3. [Elliot Condon's Advanced Custom Fields](http://advancedcustomfields.com) plugin will be used
 
 ## Features
 
 * HTML5 markup with ARIA Landmark roles
 * CSS reset with baseline typography and utility classes
-* Ready to go with Elliot Condon's Advanced Custom Fields plugin
 * Localization-ready
 
 ## Usage
@@ -31,7 +29,7 @@ There are a number of variables throughout the theme files that are meant to be 
 * **themename_** - Prefix on all theme-specific functions
 * **wordpress-starter-theme** - Name of the theme directory (i.e. /wp-content/themes/wordpress-starter-theme)
 
-You may also want to include a theme screenshot.png, which should be 600x450px.
+You may also want to include a theme screenshot.png, which should be 880x660px.
 
 ### Grunt.js
 
@@ -52,9 +50,9 @@ For example, let's say we're using [WooTheme's Flexslider](http://www.woothemes.
 Our directory structure might look something like this:
 
 ```
-js/hero-carousel.js (the file we'll serve to browsers)
-js/src/hero-carousel-scripting.js (our custom scripting for the carousel)
-js/src/lib/jquery.flexslider.js (the Flexslider plugin)
+assets/js/hero-carousel.js (the file we'll serve to browsers)
+assets/js/src/hero-carousel-scripting.js (our custom scripting for the carousel)
+assets/js/src/lib/jquery.flexslider.js (the Flexslider plugin)
 ```
 
 Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` configurations:
@@ -62,21 +60,21 @@ Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` c
 ```diff
   concat: {
     dist: {
-      src: ['js/src/theme.js'],
-      dest: 'js/scripts.js'
+      src: ['assets/js/src/theme.js'],
+      dest: 'assets/js/scripts.js'
 +   },
 +   heroCarousel: {
-+     src: ['js/src/lib/jquery.flexslider.js', js/src/hero-carousel-scripting.js'],
-+     dest: 'js/hero-carousel.js'
++     src: ['assets/js/src/lib/jquery.flexslider.js', js/src/hero-carousel-scripting.js'],
++     dest: 'assets/js/hero-carousel.js'
     }
   },
 
   uglify: {
     min: {
       files: {
--       'js/scripts.js': ['js/scripts.js']
-+       'js/scripts.js': ['js/scripts.js'],
-+       'js/hero-carousel.js': ['js/hero-carousel.js']
+-       'assets/js/scripts.js': ['assets/js/scripts.js']
++       'assets/js/scripts.js': ['assets/js/scripts.js'],
++       'assets/js/hero-carousel.js': ['assets/js/hero-carousel.js']
       }
     }
   },
@@ -87,16 +85,6 @@ Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` c
 * [An Introduction to SASS in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)
 * [Recompile SASS Upon Deployment Using Git Hooks](https://stevegrunwell.com/blog/automatically-recompile-sass-upon-deployment-using-git-hooks/)
 
-### Install Advanced Custom Fields
-
-If you intend to use Advanced Custom Fields you'll want to download and activate the plugin.
-
-#### New to ACF?
-
-If you haven't been exposed to the awesome that is ACF yet I implore you to read the following blog posts:
-
-* [Using Advanced Custom Fields for WordPress](http://stevegrunwell.com/blog/wordpress-advanced-custom-fields)
-* [Using WordPress Advanced Custom Fields Exports](http://stevegrunwell.com/blog/wordpress-advanced-custom-fields-export)
 
 ### Delete this file
 
