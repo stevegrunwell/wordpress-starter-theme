@@ -38,7 +38,7 @@ The theme is configured to use [Grunt.js](http://gruntjs.com/) to handle build t
 
 #### Stylesheets
 
-The theme styles are written using [Compass](http://compass-style.org), a [Sass CSS pre-processor](http://sass-lang.com/) framework. The idea behind this is to have reusable, well-organized stylesheets in css/sass but our theme serves concatenated and compressed styles from css/generated.
+The theme styles are written using [Compass](http://compass-style.org), a [Sass CSS pre-processor](http://sass-lang.com/) framework. The idea behind this is to have reusable, well-organized stylesheets in `assets/sass` but our theme serves concatenated and compressed styles from `assets/css`.
 
 Your Compass configuration is in config.rb.
 
@@ -83,8 +83,8 @@ Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` c
 
 ##### Resources
 
-* [An Introduction to SASS in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)
-* [Recompile SASS Upon Deployment Using Git Hooks](https://stevegrunwell.com/blog/automatically-recompile-sass-upon-deployment-using-git-hooks/)
+* [An Introduction to Sass in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)
+* [Recompile Sass Upon Deployment Using Git Hooks](https://stevegrunwell.com/blog/automatically-recompile-sass-upon-deployment-using-git-hooks/)
 
 
 ### PHP_CodeSniffer
