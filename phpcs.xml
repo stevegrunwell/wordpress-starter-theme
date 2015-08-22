@@ -3,7 +3,7 @@
 	<description>Strict WordPress theme coding standards.</description>
 
 	<file>.</file>
-	<file>./functions</file>
+	<file>./includes</file>
 
 	<exclude-pattern>./vendor/*</exclude-pattern>
 

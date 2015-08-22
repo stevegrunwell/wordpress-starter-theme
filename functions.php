@@ -6,8 +6,8 @@
  * @author %Author%
  */
 
-require_once dirname( __FILE__ ) . '/functions/admin.php';
-require_once dirname( __FILE__ ) . '/functions/utility.php';
+require_once dirname( __FILE__ ) . '/includes/admin.php';
+require_once dirname( __FILE__ ) . '/includes/utility.php';
 
 /** Enable additional theme features */
 add_post_type_support( 'page', 'excerpt' );
