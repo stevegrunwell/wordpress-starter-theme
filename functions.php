@@ -51,9 +51,7 @@ function themename_register_dynamic_sidebars() {
 add_action( 'widgets_init', 'themename_register_dynamic_sidebars' );
 
 /**
- * Register site navigation menus
- *
- * @uses register_nav_menus()
+ * Register site navigation menus.
  */
 function themename_register_nav_menus() {
 	register_nav_menus(
@@ -65,33 +63,24 @@ function themename_register_nav_menus() {
 add_action( 'init', 'themename_register_nav_menus' );
 
 /**
- * Register and enqueue theme styles and scripts
- *
- * @return void
- *
- * @uses get_stylesheet_directory_uri()
- * @uses wp_enqueue_script()
- * @uses wp_enqueue_style()
- * @uses wp_register_script()
- * @uses wp_register_style()
+ * Register and enqueue theme styles and scripts.
  */
 function themename_register_styles_scripts() {
-	/** Stylesheets */
+
+	/* Stylesheets */
 	wp_register_style( 'styles', get_stylesheet_directory_uri() . '/assets/css/styles.css', null, null, 'all' );
 
-	/** Scripts */
+	// Editor stylesheets.
+	add_editor_style( 'assets/css/editor.css' );
+
+	/* Scripts */
 	wp_register_script( 'scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), null, true );
-	wp_register_script( 'modernizr', get_stylesheet_directory_uri() . '/js/modernizr.min.js', null, null, false );
 
 	if ( ! is_admin() && ! is_login_page() ) {
 		wp_enqueue_style( 'styles' );
 
-		//wp_enqueue_script( 'modernizr' );
 		wp_enqueue_script( 'scripts' );
 	}
-
-	// Editor stylesheets.
-	add_editor_style( 'assets/css/editor.css' );
 }
 add_action( 'init', 'themename_register_styles_scripts' );
 
