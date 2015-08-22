@@ -54,16 +54,6 @@ function themename_register_dynamic_sidebars() {
 //add_action( 'widgets_init', 'themename_register_dynamic_sidebars' );
 
 /**
- * Register the site favicon, if it exists
- *
- * @uses get_template_directory_uri()
- */
-function themename_register_favicon() {
-	printf( '<link href="%s/favicon.ico" rel="shortcut icon" />' . PHP_EOL, get_template_directory_uri() );
-}
-//add_action( 'wp_head', 'themename_register_favicon' );
-
-/**
  * Register site navigation menus
  *
  * @uses register_nav_menus()
