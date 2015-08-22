@@ -10,7 +10,7 @@ get_header(); ?>
 
 <div id="content">
 
-	<h1 class="post-title"><?php printf( __( 'Search results for "%s"', '%Text_Domain%' ), get_search_query() ); ?></h1>
+	<h1 class="post-title"><?php printf( esc_html__( 'Search results for "%s"', '%Text_Domain%' ), get_search_query() ); ?></h1>
 
 	<?php if ( have_posts() ) : ?>
 
@@ -26,7 +26,7 @@ get_header(); ?>
 
 	<?php else : ?>
 
-		<p><?php printf( __( 'Our apologies but there\'s nothing that matches your search for "%s"', '%Text_Domain%' ), get_search_query() ); ?></p>
+		<p><?php printf( esc_html__( 'Our apologies but there\'s nothing that matches your search for "%s"', '%Text_Domain%' ), get_search_query() ); ?></p>
 		<?php get_search_form(); ?>
 
 	<?php endif; ?>

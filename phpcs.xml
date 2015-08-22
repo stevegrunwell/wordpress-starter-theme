@@ -5,6 +5,9 @@
 	<file>.</file>
 	<file>./includes</file>
 
+	<exclude-pattern>./assets/css/*</exclude-pattern>
+	<exclude-pattern>./assets/js/*.js</exclude-pattern>
+	<exclude-pattern>./Gruntfile.js</exclude-pattern>
 	<exclude-pattern>./vendor/*</exclude-pattern>
 
 	<rule ref="WordPress-Extra"/>

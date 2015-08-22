@@ -6,21 +6,21 @@
  * @author %Author%
  */
 
+if ( is_day() ) {
+	$post_title = sprintf( __( 'Daily Archives: %s', '%Text_Domain%' ), get_the_date() );
+} elseif ( is_month() ) {
+	$post_title = sprintf( __( 'Monthly Archives: %s', '%Text_Domain%' ), get_the_date( 'F Y' ) );
+} elseif ( is_year() ) {
+	$post_title = sprintf( __( 'Yearly Archives: %s', '%Text_Domain%' ), get_the_date( 'Y' ) );
+} else {
+	$post_title = __( 'Blog Archives', '%Text_Domain%' );
+}
+
 get_header(); ?>
 
 <div id="content">
 
-	<h1 class="post-title"><?php
-		if ( is_day() ) {
-			printf( __( 'Daily Archives: %s', '%Text_Domain%' ), get_the_date() );
-		} elseif ( is_month() ) {
-			printf( __( 'Monthly Archives: %s', '%Text_Domain%' ), get_the_date( 'F Y' ) );
-		} elseif ( is_year() ) {
-			printf( __( 'Yearly Archives: %s', '%Text_Domain%' ), get_the_date( 'Y' ) );
-		} else {
-			_e( 'Blog Archives', '%Text_Domain%' );
-		}
-	?></h1>
+	<h1 class="post-title"><?php echo esc_html( $post_title ); ?></h1>
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
