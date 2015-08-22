@@ -28,7 +28,7 @@ get_header(); ?>
 
 	<?php endwhile; ?>
 
-	<?php echo themename_post_nav_links(); ?>
+	<?php the_posts_pagination(); ?>
 
 	<?php get_sidebar( 'archive' ); ?>
 

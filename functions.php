@@ -35,50 +35,6 @@ function themename_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'themename_excerpt_more' );
 
 /**
- * Drop-in numeric pagination for archives, search results, etc.
- *
- * @return str
- */
-function themename_get_pagination() {
-	global $wp_query;
-
-	$big = 999999999; // Codex-sanctioned hack for search/archive pagination
-	$args = array(
-		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'current' => max( 1, get_query_var( 'paged' ) ),
-		'format' => '?paged=%#%',
-		'end_size' => 3,
-		'mid_size' => 2,
-		'next_text' => __( '<span>Next</span>&raquo;', '%Text_Domain%' ),
-		'prev_text' => __( '&laquo;<span>Previous</span>', '%Text_Domain%' ),
-		'total' => $wp_query->max_num_pages,
-		'before_page_number' => sprintf( '<span class="screen-reader-text">%s </span>', __( 'Page', '%Text_Domain%' ) ),
-		'type' => 'list'
-	);
-
-	return paginate_links( $args );
-}
-
-/**
- * Create previous/next post links
- *
- * @return str
- *
- * @uses get_previous_posts_link()
- * @uses get_next_posts_link()
- */
-function themename_post_nav_links() {
-	$nav = '';
-	if ( $next = get_next_posts_link( __( '&laquo; Older Posts', '%Text_Domain%' ) ) ) {
-		$nav .= sprintf( '<li class="next">%s</li>', $next );
-	}
-	if ( $prev = get_previous_posts_link( __( 'Newer Posts &raquo;', '%Text_Domain%' ) ) ) {
-		$nav .= sprintf( '<li class="prev">%s</li>', $prev );
-	}
-	return ( $nav ? sprintf( '<ul class="post-nav-links">%s</ul>', $nav ) : '' );
-}
-
-/**
  * Register dynamic sidebars
  *
  * @uses register_sidebar()
