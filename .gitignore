@@ -1,2 +1,6 @@
-.sass-cache/*
-node_modules/*
+.sass-cache
+node_modules
+vendor
+
+# You may choose to include this in your theme, but we don't want it in the starter
+composer.lock

@@ -12,6 +12,7 @@ This theme starter makes a few assumptions based on my typical workflow; if your
 * HTML5 markup with ARIA Landmark roles
 * CSS reset with baseline typography and utility classes
 * Localization-ready
+* Pre-configured for [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 
 ## Usage
 
@@ -84,6 +85,19 @@ Then, in our Gruntfile.js, we'd add the following to our `concat` and `uglify` c
 
 * [An Introduction to SASS in Responsive Design](http://stevegrunwell.com/blog/intro-to-sass-in-responsive-design)
 * [Recompile SASS Upon Deployment Using Git Hooks](https://stevegrunwell.com/blog/automatically-recompile-sass-upon-deployment-using-git-hooks/)
+
+
+### PHP_CodeSniffer
+
+The starter theme comes with [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) as a development dependency. PHP_CodeSniffer will check your code against the [WordPress-Extra and WordPress-Docs coding standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards#standards-subsets) to ensure you're writing high-quality WordPress code.
+
+To check your code against these standards, install the composer dependencies (`composer install`) and run the following:
+
+```bash
+$ ./vendor/bin/phpcs
+```
+
+If you'd like to alter the sniffs used, you can edit phpcs.xml, which follows the [PHP_CodeSniffer ruleset.xml format](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-ruleset.xml).
 
 
 ### Delete this file

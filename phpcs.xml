@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="WordPress Starter Theme">
+	<description>Strict WordPress theme coding standards.</description>
+
+	<file>.</file>
+	<file>./functions</file>
+
+	<exclude-pattern>./vendor/*</exclude-pattern>
+
+	<rule ref="WordPress-Extra"/>
+	<rule ref="WordPress-Docs"/>
+</ruleset>

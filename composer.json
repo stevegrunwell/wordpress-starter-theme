@@ -1,0 +1,22 @@
+{
+	"name"             : "yourname/my-starter-theme",
+	"description"      : "A starter theme for WordPress",
+	"version"          : "1.0.0",
+	"type"             : "wordpress-theme",
+	"minimum-stability": "stable",
+	"require-dev"      : {
+		"php"                     : ">=5.3",
+		"wp-coding-standards/wpcs": "dev-master"
+	},
+	"authors"          : [
+		{
+			"name" : "Your Name",
+			"email": "you@yourdomain.com"
+		}
+	],
+	"scripts" : {
+		"post-install-cmd" : [
+			"./vendor/bin/phpcs --config-set installed_paths ../../wp-coding-standards/wpcs;"
+		]
+	}
+}
