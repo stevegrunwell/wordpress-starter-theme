@@ -20,4 +20,4 @@ if ( is_singular() ) : ?>
     <?php the_excerpt(); ?>
   </article><!-- #post-<?php the_ID(); ?> -->
 
-<?php endif; ?>
+<?php endif;
