@@ -1,6 +1,6 @@
 <?php
 /**
- * Search form
+ * Search form.
  *
  * @package %Theme_Name%
  * @author %Author%

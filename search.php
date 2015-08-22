@@ -1,6 +1,6 @@
 <?php
 /**
- * Search results template
+ * Search results template.
  *
  * @package %Theme_Name%
  * @author %Author%

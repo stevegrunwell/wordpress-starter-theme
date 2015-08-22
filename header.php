@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme header
+ * Theme header.
  *
  * @package %Theme_Name%
  * @author %Author%

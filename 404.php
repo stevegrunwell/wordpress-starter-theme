@@ -1,6 +1,6 @@
 <?php
 /**
- * 404 Page Not Found
+ * 404 Page Not Found.
  *
  * @package %Theme_Name%
  * @author %Author%
