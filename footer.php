@@ -1,10 +1,11 @@
 <?php
 /**
- * Theme footer
+ * Theme footer.
  *
  * @package %Theme_Name%
  * @author %Author%
  */
+
 ?>
 
 <footer>
