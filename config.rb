@@ -1,13 +1,13 @@
-# Require any additional compass plugins here.
+# Require any additional Compass plugins here.
 
 # Set this to the root of your project when deployed:
 http_path = '/wp-content/themes/wordpress-starter-theme/'
-css_dir = 'css/generated'
-sass_dir = 'css/sass'
+css_dir = 'assets/css'
+sass_dir = 'assets/sass'
 images_dir = 'img'
-#generated_images_dir = 'img/generated'
+#generated_images_dir = 'assets/img/generated'
 javascripts_dir = 'js'
-#fonts_dir = 'fonts'
+#fonts_dir = 'assets/fonts'
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed

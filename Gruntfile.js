@@ -8,20 +8,20 @@ module.exports = function(grunt) {
       options: {
         force: true
       },
-      all: ['js/src/*.js']
+      all: ['assets/js/src/*.js']
     },
 
     concat: {
       dist: {
-        src: ['js/src/theme.js'],
-        dest: 'js/scripts.js'
+        src: ['assets/js/src/theme.js'],
+        dest: 'assets/js/scripts.js'
       }
     },
 
     uglify: {
       min: {
         files: {
-          'js/scripts.js': ['js/scripts.js']
+          'assets/js/scripts.js': ['assets/js/scripts.js']
         }
       }
     },
@@ -39,11 +39,11 @@ module.exports = function(grunt) {
         livereload: true
       },
       scripts: {
-        files: ['js/src/*.js'],
-        tasks: ['jshint', 'concat', 'uglify']
+        files: ['assets/js/src/*.js'],
+        tasks: ['assets/jshint', 'concat', 'uglify']
       },
       styles: {
-        files: ['css/sass/*.scss'],
+        files: ['assets/sass/*.scss'],
         tasks: ['compass']
       },
     },
